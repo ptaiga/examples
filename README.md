@@ -31,5 +31,7 @@ This section contains single-file utilities that perform simple actions. They ca
 
 - [`/cipher`](https://github.com/ptaiga/examples/tree/master/cipher) &mdash; Implementation of the _Caesar_ cipher and its two variations _Rot13_ and _Vigenere_. The performance of each of the ciphers is checked by using unit testing.
 
+- [`/kvstore`](https://github.com/ptaiga/examples/tree/master/kvstore) &mdash; Simple key-value storage. Saves data in JSON-format to a file with the following command `$ python keyvaluestorage.py --key KEY --val VAL`. When writing, the new value is added to the previous one. For reading value, you only need to specify the key as a parameter `python keyvaluestorage.py --key KEY`.
+
 
 **Note**. If the project contains a `projectname-git.zip`-archive (the full contents of the project and `.git`-folder), you can download and unzip it. As a result you will get the files and commit history of this project.
