@@ -1,6 +1,6 @@
 # AsyncSocket
 
-A system for collecting and storing metrics based on a client-server architecture. Examples of such systems are _Graphite_ and _InfluxDB_. The clients and server communicate with each other over a simple text protocol via _TCP-sockets_. To implement an asynchronous server, use the following popular _Python_-libriry: __asyncio__. To implement a clients, use the other popular _Python_-libriry: _socket_.
+A system for collecting and storing metrics based on a client-server architecture. Examples of such systems are _Graphite_ and _InfluxDB_. The clients and server communicate with each other over a simple text protocol via _TCP-sockets_. To implement an asynchronous server, the following popular _Python_-library is used: _asyncio_. To implement clients, the other popular library is used: _socket_.
 
 The examples below will collect data about the operation of the operating system of several servers. This will allow to monitor and control the server load, as well as make forecasts for the expansion of the hardware fleet.
 
@@ -10,7 +10,6 @@ The examples below will collect data about the operation of the operating system
 The protocol supports two types of requests to the server from the client side:
 - sending data to save it on the server,
 - getting saved data.
-
 
 ### General format of the client request
 ```
@@ -25,7 +24,6 @@ The protocol supports two types of requests to the server from the client side:
 
 - &lt;\n&gt; &ndash; line break character indicates the end of the command.
 
-
 ### General format of the server response
 ```
 <status><\n><response data><\n\n>
@@ -39,9 +37,7 @@ The protocol supports two types of requests to the server from the client side:
 
 - &lt;\n\n&gt; &ndash; two line break characters indicate the end of the response.
 
-
 ### Examples of client-server interaction
-
 
 #### PUT
 
@@ -72,7 +68,6 @@ If an error occurs, the server will respond:
 error\nwrong command\n\n
 ```
 
-
 #### GET
 
 To get information about the saved data, you need to send a GET-request like:
@@ -98,7 +93,6 @@ If there is no data for the specified metric, for example, when you request `get
 ```
 ok\n\n
 ```
-
 
 #### More examples
 
@@ -149,7 +143,6 @@ ok\n\n
 
 ## Client
 
-
 ### Description
 
 The client implementetion is located in file `client.py`.
@@ -158,13 +151,11 @@ Class `Client` encapsulates a connection to the server, a client socket, and met
 
 When creating an instance of the `Client`, the address pair host and port and the optional timeout parameter are passed to the constructor. At this point, the connection to the server is created and is not interrupted until the work is completed.
 
-
 ### Method `put`
 
 Method `put` takes name of the metric, numeric value and the optional parameter timestamp. If the user called the `put` method without the timestamp, the client should automatically substitute the current time value.
 
 Method returns nothing if the data is sent successfully and throws a custom `ClientError` exception if it is not successful.
-
 
 ### Method `get`
 
@@ -180,7 +171,6 @@ The client receives data from the server in text form, the method `get` process 
 The `timestamp` and `value` are converted to the `int` and `float` types, respectively. The list of values is sorted by the `timestamp` in ascending order.
 
 If the server returns a positive `ok\n\n` response to the `get` request without any data (i.e. there is no data for the requested key), the client's `get` method should return an empty dictionary `{}`.
-
 
 ### Example
 
@@ -211,7 +201,6 @@ If the server returns a positive `ok\n\n` response to the `get` request without 
 
 Note that the server stores data with a maximum resolution of one second. This means that if two identical metrics are sent at the same second, only last value will be saved. All other values will be overwritten. For this reason, the request for the key "serv.cpu" returned data only from two dimensions.
 
-
 ### Testing
 
 The code for testing the `Client` class is located in the file `test_client.py` and is run by the command:
@@ -221,7 +210,6 @@ $ python -m unittest test_client.py
 
 
 ## Server
-
 
 ### Description
 
@@ -237,7 +225,6 @@ By default listens for incoming connections to the host `127.0.0.1` and port `87
 When a `put`-request is received, the passed metrics are stored in a special data structure in the process memory.
 
 When a `get`-request is received, the server sends the requested data in the correct sequence.
-
 
 ### Using `asyncio`
 
@@ -274,7 +261,6 @@ This code creates a TCP-connection for the address `127.0.0.1:8765` and listens 
 
 This server can handle requests from multiple clients at the same time.
 
-
 ### Implementation
 
 The server implementation for receiving metrics is located in the file `server.py`.
@@ -292,7 +278,6 @@ The application code is divided into classes: `Server`, `Storage`, `StorageDrive
 The `Server` accepts and buffers the data. Then it passes them to the `StorageDriver`, where the data is parsed, processed, and the necessary actions are performed with the `Storage`.
 
 This division of the application logic into several classes makes it easy to modify the program and add new functionality. It is also much easier to perceive and debug code that performs a specific task than code that does everything at once.
-
 
 ### Example
 

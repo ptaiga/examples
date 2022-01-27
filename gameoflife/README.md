@@ -1,6 +1,7 @@
 # Conway's Game of Life
 
-Console utility for demonstrating the famous _"Conway's Game of Life"_. The implementation is made using the __Python__ language and _OOP_ principles.
+Console utility for demonstrating the famous _"Conway's Game of Life"_. The implementation is made using the _Python_ language and _OOP_ principles.
+
 
 ## Information
 
@@ -30,6 +31,7 @@ The initial pattern constitutes the seed of the system. The first generation is 
 
 Information taken from:
 https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules
+
 
 ## Guide
 
