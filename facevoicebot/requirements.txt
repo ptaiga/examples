@@ -1,0 +1,6 @@
+pytelegrambotapi
+psycopg2
+ffmpeg
+numpy
+opencv-python-headless
+pydub

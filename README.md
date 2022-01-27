@@ -24,6 +24,8 @@ Bots are written in _Python_, can be run locally and prepared for rolling out to
 
 - [`/geotelebot`](https://github.com/ptaiga/examples/tree/master/geotelebot) &mdash; Prototype of a working _Telegram Bot_. Helps the user to save and view interesting places (name, address, geo-position and photo). When sending a location, it shows which of these places are within a 500-meter radius.
 
+- [`/facevoicebot`](https://github.com/ptaiga/examples/tree/master/facevoicebot) &mdash; The bot has two features. One of them is to detect faces in a photos and save only photo with faces (using _OpenCV_). The second feature is getting voice messages, process the frame rate to 16 kHz (256 kbps) and saving it in this form for later use (using _PyDub_).
+
 
 ## Utils
 
