@@ -1,6 +1,8 @@
 # Examples of code
 
-This repository contains code examples of projects written using **_Python_** and other related technologies: *Django*, *HTML*, *CSS*, *SQLite*, *PostgreSQL*, *Redis*, *Celery*, *Git*. Here is just a brief description of each project. For more information, go to the appropriate folder.
+This repository contains code examples of projects written using **_Python_** and other related technologies: *Django*, *HTML*, *CSS*, *SQLite*, *PostgreSQL*, *Redis*, *Celery*, *Git*, *etc*. Here is just a brief description of each project. For more information, go to the appropriate folder.
+
+Sections: [Apps](#apps), [Bots](#bots), [Utils](#utils), [Tests](#tests).
 
 
 ## Apps
@@ -35,5 +37,14 @@ This section contains single-file utilities that perform simple actions. They ca
 
 - [`/kvstore`](https://github.com/ptaiga/examples/tree/master/kvstore) &mdash; Simple key-value storage. Saves data in JSON-format to a file with the following command `$ python keyvaluestorage.py --key KEY --val VAL`. When writing, the new value is added to the previous one. For reading value, you only need to specify the key as a parameter `python keyvaluestorage.py --key KEY`.
 
+
+## Tests
+
+This section is dedicated to code testing, approaches to testing, etc.
+
+- [`/utestapproaches`](https://github.com/ptaiga/examples/tree/master/utestapproaches) &mdash; using the implementation of sorting algorithm are considered different unit testing approaches: _doctest_, _contracts_, _self-writing tests_, _unittest_, _pytest_.
+
+
+##
 
 **Note**. If the project contains a `projectname-git.zip`-archive (the full contents of the project and `.git`-folder), you can download and unzip it. As a result you will get the files and commit history of this project.
