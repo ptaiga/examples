@@ -44,6 +44,8 @@ This section is dedicated to code testing, approaches to testing, etc.
 
 - [`/utestapproaches`](https://github.com/ptaiga/examples/tree/master/utestapproaches) &mdash; using the implementation of sorting algorithm are considered different unit testing approaches: _doctest_, _contracts_, _self-writing tests_, _unittest_, _pytest_.
 
+- [`/primefactor`](https://github.com/ptaiga/examples/tree/master/primefactor) &mdash; TDD on the example of implementation prime factor algorithm.
+
 
 ##
 
