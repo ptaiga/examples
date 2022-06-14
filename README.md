@@ -40,11 +40,13 @@ This section contains single-file utilities that perform simple actions. They ca
 
 ## Tests
 
-This section is dedicated to code testing, approaches to testing, etc.
+This section is dedicated to code testing, approaches to testing, examples, etc.
 
-- [`/utestapproaches`](https://github.com/ptaiga/examples/tree/master/utestapproaches) &mdash; using the implementation of sorting algorithm are considered different unit testing approaches: _doctest_, _contracts_, _self-writing tests_, _unittest_, _pytest_.
+- [`/utestapproaches`](https://github.com/ptaiga/examples/tree/master/utestapproaches) &mdash; Using the implementation of sorting algorithm are considered different unit testing approaches: _doctest_, _contracts_, _self-writing tests_, _unittest_, _pytest_.
 
 - [`/primefactor`](https://github.com/ptaiga/examples/tree/master/primefactor) &mdash; TDD on the example of implementation prime factor algorithm.
+
+- [`/evenfibonacci`](https://github.com/ptaiga/examples/tree/master/evenfibonacci) &mdash; Function returns even elements of Fibonacci sequence. Covered by contract tests, doctests, unit tests.
 
 
 ##
